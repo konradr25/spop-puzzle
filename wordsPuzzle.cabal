@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 58bae80a1b0714b31bc12ddd66a975d089605e6580f039d9fc1abc5b8552fb09
+-- hash: ab6bca6d0aed1c62aa19c03477cbfaec5376a9e2e513967bcee3bfc0f82299a5
 
 name:           wordsPuzzle
 version:        0.1.0.0
@@ -32,12 +32,15 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      base >=4.7 && <5,
+      text,
+      MissingH
   default-language: Haskell2010
 
 executable wordsPuzzle-exe
   main-is: Main.hs
   other-modules:
+      Algorithm
       Paths_wordsPuzzle
   hs-source-dirs:
       app
@@ -45,6 +48,8 @@ executable wordsPuzzle-exe
   build-depends:
       base >=4.7 && <5
     , wordsPuzzle
+    , text
+    , MissingH
   default-language: Haskell2010
 
 test-suite wordsPuzzle-test

@@ -1,5 +1,6 @@
 module Algorithm
       ( findSecretWord
+      	, printBoard
       ) where
 
 import Data.List (isInfixOf, transpose)
@@ -37,7 +38,7 @@ replaceWord [] _ string = string
 replaceWord firstString secondString baseString = replace firstString secondString baseString
 
 crossOutWord :: [String] -> String -> [String]
-crossOutWord (b:bx) word = (replaceWord (toLowerString word) (toUpperString word) b) ++ (crossOutWord bx word) -- TODO fix this method
+crossOutWord (b:bx) word = (replaceWord (toLowerString word) (toUpperString word) b) : (crossOutWord bx word) -- TODO fix this method
 
 -- transposes board
 transposeBoard :: Board -> Board

@@ -12,6 +12,14 @@ type Board = [String]
 printBoard :: Board -> IO ()
 printBoard board = putStrLn (unlines board)
 
+toMaxChar :: Char -> Char -> Char
+toMaxChar a b = max a b
+
+toMaxChars :: String-> String -> String
+toMaxChars [] _ = []
+toMaxChars str [] = str
+toMaxChars str (w:wx) = toMaxChars (toMaxChar str w) wx
+
 toLowerString :: String -> String
 toLowerString str = [ toLower x | x <- str]
 

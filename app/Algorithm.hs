@@ -15,10 +15,13 @@ printBoard board = putStrLn (unlines board)
 toMaxChar :: Char -> Char -> Char
 toMaxChar a b = max a b
 
-toMaxChars :: String-> String -> String
+toMaxChars :: String -> String -> String
 toMaxChars [] _ = []
-toMaxChars str [] = str
-toMaxChars str (w:wx) = toMaxChars (toMaxChar str w) wx
+toMaxChars (w:wx) (w1:wx1) = (toMaxChar w w1) : (toMaxChars wx wx1)
+
+joinAllOrienStrings :: String -> String -> String -> String -> String
+joinAllOrienStrings vert hor diagLeft diagRight = (toMaxChars diagRight (toMaxChars diagLeft (toMaxChars vert hor)))
+
 
 toLowerString :: String -> String
 toLowerString str = [ toLower x | x <- str]

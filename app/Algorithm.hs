@@ -12,8 +12,24 @@ type Board = [String]
 printBoard :: Board -> IO ()
 printBoard board = putStrLn (unlines board)
 
+toMaxChar :: Char -> Char -> Char
+toMaxChar a b = max a b
+
+toMaxChars :: String-> String -> String
+toMaxChars [] _ = []
+toMaxChars str [] = str
+toMaxChars str (w:wx) = toMaxChars (toMaxChar str w) wx
+
+
+crossOutWords :: Board -> [String] -> Board
+crossOutWords [] _ = []
+crossOutWords board [] = board
+crossOutWords board (w:wx) = crossOutWords (crossOutWord board w) wx
+
+
 toLowerString :: String -> String
 toLowerString str = [ toLower x | x <- str]
+
 
 toUpperString :: String -> String
 toUpperString str = [ toUpper x | x <- str]
@@ -75,6 +91,7 @@ getWordFromCrossedOutBoard (x:xs) = (getWordFromCrossedOutLine x) ++ (getWordFro
 -- changes all characters to lowercase
 getListWithLowerStrings :: [String] -> [String]
 getListWithLowerStrings board = map toLowerString board
+
 
 -- Finds secret word on the board, list of words and returns secret word. Algorithm starts here.
 findSecretWord :: [String] -> [String] -> String

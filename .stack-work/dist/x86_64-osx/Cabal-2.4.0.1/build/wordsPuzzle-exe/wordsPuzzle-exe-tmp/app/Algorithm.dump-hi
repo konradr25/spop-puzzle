@@ -1,0 +1,125 @@
+
+==================== FINAL INTERFACE ====================
+2019-01-23 23:14:08.718553 UTC
+
+interface main:Algorithm 8063
+  interface hash: c80c90f1ebc7181fd86309b0ba5f514b
+  ABI hash: 3295a8c607b156fcb241f37ee14d9182
+  export-list hash: ce67e2d6777b8c398f04a533eb343541
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 30c9108d8fcfd6c493b3ab296d2adb4e
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Algorithm.findSecretWord
+  Algorithm.printBoard
+module dependencies:
+package dependencies: MissingH-1.4.1.0 base-4.12.0.0*
+                      ghc-prim-0.5.3 integer-gmp-1.0.2.0 mtl-2.2.2 transformers-0.5.5.0
+orphans: transformers-0.5.5.0:Control.Monad.Trans.Error
+         base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Functor.Compose base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity
+                         base-4.12.0.0:Data.Functor.Product base-4.12.0.0:Data.Functor.Sum
+                         base-4.12.0.0:Data.Monoid base-4.12.0.0:Data.Semigroup
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:Data.Version
+                         base-4.12.0.0:GHC.Generics base-4.12.0.0:GHC.IO.Exception
+import  -/  MissingH-1.4.1.0:Data.List.Utils cfb341b0705b927be9bddc2b550570e9
+import  -/  base-4.12.0.0:Data.Char 0f6e335e98e2ddac4f2764f212d2f08a
+import  -/  base-4.12.0.0:Data.List ce2c69da408fdc014383cede9e1f9adf
+import  -/  base-4.12.0.0:Data.OldList c2cab40fed7d27b5e717779f9a3c09ea
+import  -/  base-4.12.0.0:GHC.Base cc906f98291a1b830546e99a96674547
+import  -/  base-4.12.0.0:GHC.Unicode e72f63c0b07b1495548f1f84ce6c22b5
+import  -/  base-4.12.0.0:Prelude 5c01365ec01f83bd405ac01cbb9a8d76
+import  -/  base-4.12.0.0:System.IO 7d8c7a747c93b42b043d691b66e1809e
+import  -/  ghc-prim-0.5.3:GHC.Classes e0d9c979f6368701f34fa421754d2cce
+import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
+837888db75c13f4571cd9b8f5e97b0de
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Algorithm.$trModule3
+                   Algorithm.$trModule1) -}
+f621abe1d953427463339f5ad97b7928
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Algorithm.$trModule2) -}
+eaa7bbcb904405c6c6e76c311fe7c075
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Algorithm"#) -}
+cb3ec21d24c371bb550736600853f150
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Algorithm.$trModule4) -}
+0d3feacd7de721447c05b2eb5a700449
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("main"#) -}
+ea1bc1eda15e801f4297baf04f15db7a
+  type Board = [GHC.Base.String]
+5a0a5726082f5aa7140fc345982ca9d8
+  crossOutWords ::
+    Algorithm.Board -> [GHC.Base.String] -> Algorithm.Board
+  {- Arity: 2, Strictness: <S,1*U><L,1*U> -}
+e846a5f92ee4a886133603e9ea749149
+  findSecretWord ::
+    [GHC.Base.String] -> [GHC.Base.String] -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: (\ (ds :: [GHC.Base.String])
+                   (ds1 :: [GHC.Base.String]) ->
+                 case ds of wild {
+                   [] -> GHC.Types.[] @ GHC.Types.Char
+                   : ipv ipv1
+                   -> case ds1 of wild1 {
+                        [] -> GHC.Types.[] @ GHC.Types.Char
+                        : ipv2 ipv3
+                        -> case GHC.Base.map
+                                  @ [GHC.Types.Char]
+                                  @ [GHC.Types.Char]
+                                  Algorithm.toLowerString
+                                  wild of wild2 {
+                             [] -> Algorithm.findSecretWord1
+                             : ipv4 ipv5
+                             -> Algorithm.getWordFromCrossedOutBoard
+                                  (Data.OldList.transpose
+                                     @ GHC.Types.Char
+                                     (Algorithm.crossOutWords
+                                        (Data.OldList.transpose
+                                           @ GHC.Types.Char
+                                           (Algorithm.crossOutWords wild2 wild1))
+                                        wild1)) } } }) -}
+a7a58ce48254f0f6dc21bd830c6cfca9
+  findSecretWord1 :: GHC.Base.String
+  {- Unfolding: (Algorithm.getWordFromCrossedOutBoard
+                   (GHC.Types.[] @ GHC.Base.String)) -}
+90f06124aedd3f941e85f915b821eb03
+  findSecretWord_go :: [GHC.Types.Char] -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U> -}
+e276105b50875c04271ef8c5a4fd408b
+  getWordFromCrossedOutBoard :: Algorithm.Board -> GHC.Base.String
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+085a0d178d6de909dba9e8432662a718
+  printBoard :: Algorithm.Board -> GHC.Types.IO ()
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (board :: Algorithm.Board) ->
+                 GHC.IO.Handle.Text.hPutStr'
+                   GHC.IO.Handle.FD.stdout
+                   (Data.OldList.unlines board)
+                   GHC.Types.True) -}
+cbb74eb8bd6eae2fb5621c5eed9fba2e
+  toLowerString :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (str :: GHC.Base.String) ->
+                 Algorithm.findSecretWord_go str) -}
+trusted: safe
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+

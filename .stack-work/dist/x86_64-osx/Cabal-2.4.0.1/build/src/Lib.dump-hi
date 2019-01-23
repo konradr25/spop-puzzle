@@ -1,0 +1,915 @@
+
+==================== FINAL INTERFACE ====================
+2019-01-21 18:45:22.749269 UTC
+
+interface wordsPuzzle-0.1.0.0-4VZqfgMzFRK1W22fjsuOen:Lib 8063
+  interface hash: 70208b44a9f44acc0277b3050abbc447
+  ABI hash: 756adec74dd8cade74cd29a72ea4c934
+  export-list hash: c82bf8a8559073abfbe4342db776b144
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: 304d54461d9c82d343c8527b06b0f850
+  opt_hash: 6faf2de08de32d19db9870899d88e59a
+  hpc_hash: 93b885adfe0da089cdf634904fd59f71
+  plugin_hash: ad164012d6b1e14942349d58b1132007
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Lib.grid
+  Lib.languages
+  Lib.someFunc
+module dependencies:
+package dependencies: base-4.12.0.0* ghc-prim-0.5.3
+                      integer-gmp-1.0.2.0
+orphans: base-4.12.0.0:GHC.Float base-4.12.0.0:GHC.Base
+family instance modules: base-4.12.0.0:Control.Applicative
+                         base-4.12.0.0:Data.Functor.Const
+                         base-4.12.0.0:Data.Functor.Identity base-4.12.0.0:Data.Monoid
+                         base-4.12.0.0:Data.Semigroup.Internal base-4.12.0.0:GHC.Generics
+                         base-4.12.0.0:GHC.IO.Exception
+import  -/  base-4.12.0.0:Prelude 5c01365ec01f83bd405ac01cbb9a8d76
+import  -/  base-4.12.0.0:System.IO 7d8c7a747c93b42b043d691b66e1809e
+import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
+e420a6e25d4d487bb3d7f4c3bdc77f01
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Lib.$trModule3 Lib.$trModule1) -}
+417f37f6fb01b0f7ab09eabceeca3cca
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Lib.$trModule2) -}
+ba4bb9646907cf475e15c0fd3af266bf
+  $trModule2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("Lib"#) -}
+2fbd4e721247f7c51d07a832ddc2b232
+  $trModule3 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS Lib.$trModule4) -}
+55984eee342a5c0a2c88e19bd7743f13
+  $trModule4 :: GHC.Prim.Addr#
+  {- HasNoCafRefs,
+     Unfolding: ("wordsPuzzle-0.1.0.0-4VZqfgMzFRK1W22fjsuOen"#) -}
+ba35ea35f2cd101e77b46b6d9623dd14
+  grid :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Lib.grid49 Lib.grid1) -}
+dea14a3e7a101ed11ca2a1430fa2dc3a
+  grid1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Lib.grid47 Lib.grid2) -}
+e80b521cbdb93c1dabe787e6022d50a4
+  grid10 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.grid29
+                   Lib.grid11) -}
+dbc4630317f18cd3217c4aae60d04ea7
+  grid11 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.grid27
+                   Lib.grid12) -}
+77d1d0c792283e7523bccf5cf7cc03a4
+  grid12 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.grid25
+                   Lib.grid13) -}
+14d6770f9b97c80ab706d47cec92c091
+  grid13 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.grid23
+                   Lib.grid14) -}
+a2b65d069cc577ebf0365f1c94f7b3c5
+  grid14 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.grid21
+                   Lib.grid15) -}
+adc430640151de04768f958f963cdd86
+  grid15 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.grid19
+                   Lib.grid16) -}
+6fcc66317394316e79d7257fe4296086
+  grid16 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.grid17
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+04c9d4c8d046b14d256f219e687c2c44
+  grid17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid18) -}
+c35e3913262ec39431feed7d0d82a4ca
+  grid18 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("BLACKCATKGOBLINRK"#) -}
+f47862090e97cb26d3765ab2116b1967
+  grid19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid20) -}
+2e5a27bc1872163e98864e3d119b99dd
+  grid2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Lib.grid45 Lib.grid3) -}
+2a24028b06bdcfb47ddf295d14f8ac5e
+  grid20 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("FUNHORROWFILMKREC"#) -}
+ad6ba12c2332d119931b1d2e5de93420
+  grid21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid22) -}
+9aca2107ff69113ae616cba884a487cf
+  grid22 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("FANGSLCANDIESCEBA"#) -}
+53b9f7e0fea2e43e8f1ce285b4761056
+  grid23 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid24) -}
+35d28f4b99dbe136ee6a2004cd68b895
+  grid24 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("COSTUMEPARTYEITOL"#) -}
+adc93ea4089fbc955d78ad93a7c76102
+  grid25 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid26) -}
+48375e545d4fe82ce77d8dcda6bd2d93
+  grid26 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("BATORYCEENLRRTNTB"#) -}
+023c07678965675743212785b69a6e95
+  grid27 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid28) -}
+5813e49b20e08ae46701ef412cdef9cd
+  grid28 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("KAHOKILPAGAEISACD"#) -}
+96ac792d7515d9b87ddae01128b2726c
+  grid29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid30) -}
+000d37636f567daf6f5bb348abf2e180
+  grid3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Lib.grid43 Lib.grid4) -}
+f7ebbb9c9400890e58c6921f52e23dca
+  grid30 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SGWONPCEUESRPMLON"#) -}
+1f7a593d6255741db84ccb65b9b68c8a
+  grid31 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid32) -}
+26361c556a4e182c3a6d18e19cf6f601
+  grid32 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("ASOSRIBKFULLMOONA"#) -}
+9267046771815b5237778ae8bbe9850a
+  grid33 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid34) -}
+6491bea1d376d07ddfbe94c23a0c2c26
+  grid34 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("MPKUPYGEONBOAOKRE"#) -}
+7b11fdff296d873863d5e7d314618a87
+  grid35 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid36) -}
+94f573cc213e66d3649e1254b1d806da
+  grid36 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SBPELIIHMROOVRCOG"#) -}
+8c4d42e323136465d3a07661c6ec02fa
+  grid37 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid38) -}
+55e5621590a541cdc65018981bb824b9
+  grid38 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SKULLBDUTRTCGBACN"#) -}
+8120ca4c22000af03c51224062309743
+  grid39 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid40) -}
+ede0c3d7bec2dc38354e10ff277702be
+  grid4 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Lib.grid41 Lib.grid5) -}
+45abdbd159e8be25806240b60b75377b
+  grid40 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("YMEUMETEBEERIEJYA"#) -}
+23568badec574419a6bf3b4bd21c1c6e
+  grid41 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid42) -}
+4ae8c3f5db703462b33ea462164c7df7
+  grid42 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("MJOOTUTURCREEPYDR"#) -}
+6e641a9e0afbe08d8d82df6405cd15ea
+  grid43 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid44) -}
+855a489efea469c2e913b29700f64cf7
+  grid44 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("MSZNABOOTSAMHAINO"#) -}
+a40eb84b6db057716bf94cd49d28c7f5
+  grid45 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid46) -}
+092e151ebb28d077c851183d14e5751e
+  grid46 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("UBUZZPRANKGHOSTAR"#) -}
+23497703dbe10f8e1ab5891a53189875
+  grid47 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid48) -}
+fa6870bafe29f9d7082737d5b78abd09
+  grid48 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("MASQUERADEBAWITCH"#) -}
+fef9874c33dcf85ddb271bb246897859
+  grid49 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.grid50) -}
+f4d9e621a122c7358f88d23dab8b026b
+  grid5 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Lib.grid39 Lib.grid6) -}
+92c0f20efc111dbc584d380030f2ff4a
+  grid50 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("HSCARECROWPUMPKIN"#) -}
+fff27004f7c36fa4920763d556fa474f
+  grid6 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Lib.grid37 Lib.grid7) -}
+b808be328b2ebff40325b8d662622266
+  grid7 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Lib.grid35 Lib.grid8) -}
+4f1684751776d07533287d899baefaf5
+  grid8 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.: @ [GHC.Types.Char] Lib.grid33 Lib.grid9) -}
+f81cc3a13868c20b3ef0759e2c748d3d
+  grid9 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.grid31
+                   Lib.grid10) -}
+e9782050dd6db0924307a089a5fd4448
+  languages :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages148
+                   Lib.languages1) -}
+89787ed052e0dd092bfb9129ce99aad2
+  languages1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages146
+                   Lib.languages2) -}
+eb5b53cdc7394c7dd3f655b70d892a5c
+  languages10 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages128
+                   Lib.languages11) -}
+5fc4ab2faad508f2557aa177b662bea5
+  languages100 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages101) -}
+5d693a10a3c03a8df8fad1361d420686
+  languages101 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("JELLY BEAN"#) -}
+00fbebd79e3b3745f4a2e3eeac7a9b4e
+  languages102 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages103) -}
+12c17eb9af22d21102edfb0b27b44257
+  languages103 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("JACK-O-LANTERN"#) -}
+679792a3bb68cd6be033649f23373efc
+  languages104 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages105) -}
+cfec344eaf6582ad5f075d496f9b00dd
+  languages105 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("HORROW FILM"#) -}
+eb934cfc72c399535f44947d23d1a7a4
+  languages106 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages107) -}
+58baed1f52c85d892c080edf42d0f914
+  languages107 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("HAUNTED HOUSE"#) -}
+b99ccc32b7b72f317665e665218f7b95
+  languages108 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages109) -}
+daabcd68bb596f97f015f26ff2ea6e77
+  languages109 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("GOBLIN"#) -}
+2ccf67f1e38f778059abfd47ce055d05
+  languages11 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages126
+                   Lib.languages12) -}
+26cf67e7ccb4a02d905b2f5888e55c8b
+  languages110 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages111) -}
+1ec0b00cabb897cca48d7d986c0e15c2
+  languages111 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("GHOUL"#) -}
+5683a60527378879a31786b2b514360c
+  languages112 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages113) -}
+de6e8a910ad9bfde452a53479c558a14
+  languages113 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("GHOST"#) -}
+5ea709e9ab5c413cf31b8dd9ae07c669
+  languages114 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages115) -}
+c814a1ad8181eaeca27f928ead678205
+  languages115 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("FUN"#) -}
+055636b0e4d826ac7de08ae71049fb37
+  languages116 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages117) -}
+0e46d986056186b96f1cfe10110de964
+  languages117 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("FULL MOON"#) -}
+127ff09d795417c746da1bf83038bac6
+  languages118 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages119) -}
+faa8b7fff6dfa001a805fcef700ff403
+  languages119 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("FEAR"#) -}
+749b4b51f3d1add8df57acbc4d343545
+  languages12 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages124
+                   Lib.languages13) -}
+76215c7e6fe9f534de4046f7089c207d
+  languages120 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages121) -}
+a182f0e6278e4d7d349b75f7d53a7c3a
+  languages121 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("FANGS"#) -}
+23477d9d94675f9eb4216733b21df387
+  languages122 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages123) -}
+545f4657dd2360d3cabb834af9052f25
+  languages123 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("EERIE"#) -}
+c4038a9453ea8813c2d828886f9b5096
+  languages124 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages125) -}
+20704ab38672849261b8130b4322a213
+  languages125 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("CREEPY"#) -}
+2d4e6b95ebd2f51286b58ac38ad7b8c5
+  languages126 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages127) -}
+af7c36521b00a753bdad32c2b00946bd
+  languages127 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("COSTUME PARTY"#) -}
+799f6ed5f7fb0b176d84ea783d5ada3d
+  languages128 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages129) -}
+c5b1bd8f84a466d0d00ba5f579a3780c
+  languages129 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("COOL"#) -}
+4f4f5d9f6471bf40f8d81b39d63f6d32
+  languages13 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages122
+                   Lib.languages14) -}
+b38c6677d88b809397d219cecf58a0c4
+  languages130 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages131) -}
+3791e3dc41492f43cf6b6bf6c7a6ff89
+  languages131 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("CANDY CORN"#) -}
+7c69cc9118a347823e3d15fc43a9a183
+  languages132 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages133) -}
+fc55c0fb6a3b8fcbed0f322783d2bac9
+  languages133 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("CANDIES"#) -}
+650a9ca831396a66ce82531f43edc1bd
+  languages134 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages135) -}
+adbbc716e92af2f785f7058ae376bd75
+  languages135 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("BUZZ"#) -}
+ec5d27971bbaeef9e508c2805bf049ec
+  languages136 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages137) -}
+6e947bafeb6e008ec3fe40a26f7864d8
+  languages137 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("BROOMSTICK"#) -}
+0cbd95bbc4600532e016d3658399db49
+  languages138 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages139) -}
+a92b8b0a847c1fb34576247ec60760d8
+  languages139 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("BROOM"#) -}
+eb243b21cdac36028077a831565a5ecc
+  languages14 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages120
+                   Lib.languages15) -}
+bfb9e4cac963fa5340a550e719339a86
+  languages140 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages141) -}
+1f1d4a889f0d27bbfc2c92add23f8061
+  languages141 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("BOO"#) -}
+83fac9cf6cbd827642ff5b36dcfa0089
+  languages142 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages143) -}
+08e68f436e814c70ea9284e4c7190e38
+  languages143 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("BOGEY"#) -}
+72cbf47ca698e39e10df8bbef1a1d675
+  languages144 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages145) -}
+e090d0672c227fd124c6d54d0c085f15
+  languages145 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("BLACK CAT"#) -}
+b06ba3f9a8e5d61fd894d068abe97f39
+  languages146 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages147) -}
+3cf3d9cff3bbf9d64fe07846913df83e
+  languages147 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("BAT"#) -}
+43d5776df9acc7ffcafdf77cd3686f9d
+  languages148 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages149) -}
+e0b4c34ee293a982267dc579309f5439
+  languages149 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("AUTUMN"#) -}
+ea54f2626a93ae563bf27a7405647fed
+  languages15 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages118
+                   Lib.languages16) -}
+469bedbe1a9a35d05565fa40e5ec0681
+  languages16 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages116
+                   Lib.languages17) -}
+30396ef2d043c3b021e8d95a6add5d15
+  languages17 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages114
+                   Lib.languages18) -}
+cf24475ef4b22538d603273feeb183bd
+  languages18 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages112
+                   Lib.languages19) -}
+91dcc9b6263a5b2a392668f1c2dc35b9
+  languages19 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages110
+                   Lib.languages20) -}
+210809cbf1f7ae786a7f7f4d8c9d3564
+  languages2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages144
+                   Lib.languages3) -}
+912c9a37e23474d007c2fc20f3266482
+  languages20 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages108
+                   Lib.languages21) -}
+761e2eba01f24ef32416142acc6ff848
+  languages21 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages106
+                   Lib.languages22) -}
+c97267e85fb25f00a89e91492757c835
+  languages22 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages104
+                   Lib.languages23) -}
+ca2d5081d360bee447f861c2764fd512
+  languages23 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages102
+                   Lib.languages24) -}
+f4e185e5eee31aa0a14f05e9d7335a19
+  languages24 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages100
+                   Lib.languages25) -}
+5020e3be314cc1dc4f36968f342ac843
+  languages25 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages98
+                   Lib.languages26) -}
+cb6354f4047023febf4fad17d6e6d041
+  languages26 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages96
+                   Lib.languages27) -}
+0abd2f71fa25d389c785ef7699591d84
+  languages27 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages94
+                   Lib.languages28) -}
+46edc145c8953bab8f6773043f4b3159
+  languages28 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages92
+                   Lib.languages29) -}
+92860ea44b26fb4539b667f6d9c61a2e
+  languages29 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages90
+                   Lib.languages30) -}
+b4f14ef96590d141c90936454dee941d
+  languages3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages142
+                   Lib.languages4) -}
+4e31c18180965f4381373d589ba24d26
+  languages30 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages88
+                   Lib.languages31) -}
+5b1e4be635c8238be46ba0381ecd6101
+  languages31 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages86
+                   Lib.languages32) -}
+2082e55f5855dc5f33ba4a2daa67d4c1
+  languages32 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages84
+                   Lib.languages33) -}
+e42dfcacbed659766c6689982ea96caf
+  languages33 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages82
+                   Lib.languages34) -}
+a55a9ccf96d7b5fda2b78ddcf4352bc1
+  languages34 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages80
+                   Lib.languages35) -}
+1177e066f410a445ea0d97289101c355
+  languages35 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages78
+                   Lib.languages36) -}
+7553fdbd879082c0aeaa5580bf0f11c2
+  languages36 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages76
+                   Lib.languages37) -}
+c17b1b84362c5f6bae1efb6b3c29080d
+  languages37 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages74
+                   Lib.languages38) -}
+a31e1e88e24bd311215dc4a8c8727919
+  languages38 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages72
+                   Lib.languages39) -}
+bb2156144f32e749d5ec9ed615e9b27b
+  languages39 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages70
+                   Lib.languages40) -}
+29fb0f7511841b97359c0f1d17df5142
+  languages4 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages140
+                   Lib.languages5) -}
+eb939f45f33e237201f208a12cfc70a7
+  languages40 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages68
+                   Lib.languages41) -}
+1254a2c7119b56f93a04118b38a3e1aa
+  languages41 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages66
+                   Lib.languages42) -}
+e2db48788724f9399b6e37e93b472650
+  languages42 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages64
+                   Lib.languages43) -}
+9d7cbe8a1cf717401ca7fc9fd4fcaf47
+  languages43 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages62
+                   Lib.languages44) -}
+030cab47ebf0ca35d1618e8fe6177b73
+  languages44 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages60
+                   Lib.languages45) -}
+479a63bd4a85472bf23f507c9c9133a0
+  languages45 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages58
+                   Lib.languages46) -}
+4a17dd13ff3287f615cf59914ea9ebcf
+  languages46 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages56
+                   Lib.languages47) -}
+1e7d8bcb6bea2003d2da9725af83835f
+  languages47 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages54
+                   Lib.languages48) -}
+913e3d4e065683e7649ee10cbe350106
+  languages48 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages52
+                   Lib.languages49) -}
+90e42b07870ae8167a7f002a1fb9687e
+  languages49 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages50
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+f708adf111850f48337a2ba52e95b128
+  languages5 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages138
+                   Lib.languages6) -}
+6db1099457b1b62d8191932919f5f4bf
+  languages50 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages51) -}
+7163d84876b106c4c3f1ae1c03205b71
+  languages51 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("ZOMBIE"#) -}
+7a0a3bb1d3a884b9aad8e9f855e595ef
+  languages52 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages53) -}
+2fc837934061ded4746babc8b9d4e728
+  languages53 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("WORM"#) -}
+c60a1fd0265e9a0bdef166fc14a4b86d
+  languages54 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages55) -}
+53b96e6fc11345630ca24aa742372445
+  languages55 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("WITCH"#) -}
+f9ea8ef5e01ca9403e77393ddfc9257a
+  languages56 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages57) -}
+d9ec5ff49b6edc17afdda9511a6b6602
+  languages57 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("VAMPIRE"#) -}
+a265d41647830806050305b33ea256d7
+  languages58 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages59) -}
+d7f435a0cc5c0516940b072006bf0229
+  languages59 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("UGLY"#) -}
+26cf5bfef2beb0e12429b545592428cf
+  languages6 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages136
+                   Lib.languages7) -}
+6c22f07a5deddf28b520375da94cfda1
+  languages60 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages61) -}
+03fbe93b1a130ecf38ad23c8b52082e8
+  languages61 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("TUTU"#) -}
+57d68230440afaaec04cd47be3466220
+  languages62 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages63) -}
+3910c3bb9431739486256c927d23b935
+  languages63 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("TRICK OR TREAT"#) -}
+0d08b113f69f897546d49fbdf5959702
+  languages64 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages65) -}
+5b7bd620692a912e49f4d1be79062849
+  languages65 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SPOOKY"#) -}
+d8ec2f7aaae29c3100dc6ed97a0ee926
+  languages66 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages67) -}
+60d0be7fea82c0e4e0161609d371ace2
+  languages67 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SPIDER"#) -}
+a6091e029c96fefbf1a1181647122eda
+  languages68 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages69) -}
+bcd84be0151615f5e9814814e4110dca
+  languages69 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SOUL"#) -}
+4e575e452407bd1766d80d81e4c86fae
+  languages7 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages134
+                   Lib.languages8) -}
+b5156f86cc6571280a38f8acdd92c4df
+  languages70 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages71) -}
+09ab5f2e9950a8e8e9d47481710c7e7f
+  languages71 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SKULL"#) -}
+02a4dc73f2f9a660c2bad5875096cf14
+  languages72 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages73) -}
+254267e4f8ab9caa6305cda0856f4199
+  languages73 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SKELETON"#) -}
+33e10501c278b2735a410e6e4afc1272
+  languages74 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages75) -}
+425ed984a46618a535ee9d5a3fc97fb6
+  languages75 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SCARE CROW"#) -}
+7eed0f3d8028f44fad1075fd39f0b61b
+  languages76 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages77) -}
+95dcfc1fe1c27735e3867299b49ade9e
+  languages77 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("SAMHAIN"#) -}
+a9f2a68b99fccfe7d1e7bfbd095d9c1a
+  languages78 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages79) -}
+cadce41b58a983c1c02accd1412185ac
+  languages79 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("RAT"#) -}
+11f34c6eba9dc23049761ccbcc9adf8c
+  languages8 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages132
+                   Lib.languages9) -}
+e3ee21f69ccad04f83f62a336e6304f7
+  languages80 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages81) -}
+59e6cc792700bf0711ae7267e2cf88b6
+  languages81 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("PURPLE"#) -}
+c2d887bca58ebacb5a12512125411ac4
+  languages82 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages83) -}
+3d476d2b081650e18a1ecd8b35a4926b
+  languages83 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("PUMPKIN"#) -}
+c9402c0b93eba70e69a5a17ed58641d4
+  languages84 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages85) -}
+48d3cc9588d73936ba7c83f395c1145f
+  languages85 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("PRANK"#) -}
+ca14f2604a26ef725290da97114b0daa
+  languages86 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages87) -}
+2bd1fe876213068e4c14971177e8f038
+  languages87 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("PERIL"#) -}
+89e257a39ed5b7856864be683fc59b28
+  languages88 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages89) -}
+3c7693a412f4bb48d10ff7aedc0eacc0
+  languages89 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("ORANGE AND BLACK"#) -}
+8a993e09ca4e417ada475392ca50916c
+  languages9 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Lib.languages130
+                   Lib.languages10) -}
+d17d3dd8ace8e1df78dffceebc813304
+  languages90 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages91) -}
+6e9da417cacaa27a0d8f5ee910575ba9
+  languages91 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("OCTOBER"#) -}
+3b0c4c379cd13b01e2330b11568e9b6c
+  languages92 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages93) -}
+403ffd4fc8055b76ebeec7f740980999
+  languages93 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("NIGHT"#) -}
+d4042ffdce1ab94dede8a0b8183938b3
+  languages94 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages95) -}
+f4bca38015502ede9c57deb63f57c5cf
+  languages95 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("MUMMY"#) -}
+b8bda75656507f01e86046f19e4b4659
+  languages96 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages97) -}
+cb5922c6d9d686abbce150ce8714620d
+  languages97 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("MASQUERADE"#) -}
+b5498fc02c3275edafa13e327c9b7544
+  languages98 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.languages99) -}
+31ff9a6a9706c6e1af22e85dc24f6dd9
+  languages99 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("MASK"#) -}
+3d5d42eb3dc1a2a1702d971e40ea81b9
+  someFunc :: GHC.Types.IO ()
+  {- Arity: 1,
+     Unfolding: (GHC.IO.Handle.Text.hPutStr'
+                   GHC.IO.Handle.FD.stdout
+                   Lib.someFunc1
+                   GHC.Types.True) -}
+9430c56ba6c0d29e3637caa9d6069b7f
+  someFunc1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# Lib.someFunc2) -}
+b961e0ddea00fd9e51fff0b117444b06
+  someFunc2 :: GHC.Prim.Addr#
+  {- HasNoCafRefs, Unfolding: ("someFunc"#) -}
+trusted: safe
+require own pkg trusted: False
+module header:
+  Nothing
+declaration docs:
+arg docs:
+

@@ -54,7 +54,7 @@ crossOutWords board (w:wx) = crossOutWords (crossOutWord board w) wx
 -- Cross out words in all directions and return board in basic version
 crossOutWordsInAllDirections :: Board -> [String] -> Board
 crossOutWordsInAllDirections [] _ = []
-crossOutWordsInAllDirections board wordList = crossOutWords (transposeBoard (crossOutWords board wordList)) wordList --TODO add diagonall direction
+crossOutWordsInAllDirections board wordList = transposeBoard (crossOutWords (transposeBoard (crossOutWords board wordList)) wordList) --TODO add diagonall direction
 
 
 

@@ -17,6 +17,7 @@ prepareWordsToFind (l:ls) = (replace " " "" (replace "-" "" l)) : (prepareWordsT
 printBoard :: Board -> IO ()
 printBoard board = putStrLn (unlines board)
 
+-- take bigger letter eg from AwAr and aWAr -> AWAr
 toMaxChar :: Char -> Char -> Char
 toMaxChar a b = min a b
 
@@ -24,10 +25,17 @@ toMaxChars :: String -> String -> String
 toMaxChars [] _ = []
 toMaxChars (w:wx) (w1:wx1) = (toMaxChar w w1) : (toMaxChars wx wx1)
 
+toLowerString :: String -> String
+toLowerString str = [ toLower x | x <- str]
+
+toUpperString :: String -> String
+toUpperString str = [ toUpper x | x <- str]
+
 prefix:: String -> String
 prefix [] = []
 prefix line = '_' : line
 
+-- modify board to enable diagonal search for words
 toSkew :: Board -> Board
 toSkew [] = []
 toSkew (l:ls) = l : toSkew (map prefix ls)
@@ -48,12 +56,6 @@ boardToString :: Board -> String
 boardToString [] = ""
 boardToString (x:xs) = x ++ (boardToString xs)
 
-toLowerString :: String -> String
-toLowerString str = [ toLower x | x <- str]
-
-toUpperString :: String -> String
-toUpperString str = [ toUpper x | x <- str]
-
 diagonalizeDown :: Board -> Board
 diagonalizeDown board = transpose (skewBackward (toSkew (map reverse board)))
 
@@ -73,7 +75,7 @@ replaceWord firstString secondString baseString = replace firstString secondStri
 
 crossOutWord :: [String] -> String -> [String]
 crossOutWord [] _ = []
-crossOutWord (b:bx) word = (replaceWord (toLowerString word) (toUpperString word) b) : (crossOutWord bx word) -- TODO fix this method
+crossOutWord (b:bx) word = (replaceWord (toLowerString word) (toUpperString word) b) : (crossOutWord bx word)
 
 -- transposes board
 transposeBoard :: Board -> Board

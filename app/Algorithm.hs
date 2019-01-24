@@ -28,9 +28,7 @@ skew (l:ls) = l : skew (map indent ls)
 
 unskew :: Board -> Board
 unskew [] = []
-unskew (l:ls) = l : unskew (map unindent ls)
-  where unindent line = '_' : line
-
+unskew (l:ls) = (replace "_" "" l) : (unskew ls)
 joinAllOrienStrings :: String -> String -> String -> String -> String
 joinAllOrienStrings vert hor diagLeft diagRight = (toMaxChars diagRight (toMaxChars diagLeft (toMaxChars vert hor)))
 

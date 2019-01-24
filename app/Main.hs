@@ -18,8 +18,8 @@ main = do
 
     -- finding secret word
     printBoard boardLines
-    printBoard (skew boardLines)
-    printBoard (skewBackward (skew boardLines))
+    printBoard (toSkew boardLines)
+    printBoard (skewBackward (toSkew boardLines))
  --   printBoard (diagonalize2 boardLines)
   --  printBoard (undiagonalize2 (diagonalize2 boardLines))
     --printBoard (skew (undiagonalize (diagonalize boardLines)))
@@ -28,7 +28,7 @@ main = do
     --printBoard (skew (transpose boardLines))
     --putStrLn (boardToString (unskew (skew boardLines)))
 
-    let secretWord = findSecretWord boardLines wordsLines
+    let secretWord = findSecretWord boardLines (prepareWordsToFind wordsLines)
     putStr "The secret word is "
     putStrLn secretWord
 

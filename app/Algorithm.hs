@@ -23,11 +23,6 @@ joinAllOrienStrings :: String -> String -> String -> String -> String
 joinAllOrienStrings vert hor diagLeft diagRight = (toMaxChars diagRight (toMaxChars diagLeft (toMaxChars vert hor)))
 
 -- gets all words that are not in uppercase
-boardTOStringWithReplace :: Board -> String -> String 
-boardTOStringWithReplace [] _ = ""
-boardTOStringWithReplace (x:xs) str = (replaceWord (toLowerString str) (toUpperString str) x) ++ (boardTOStringWithReplace xs str)
-
--- gets all words that are not in uppercase
 boardToString :: Board -> String
 boardToString [] = ""
 boardToString (x:xs) = x ++ (boardToString xs)
@@ -57,11 +52,6 @@ crossOutWords [] _ = []
 crossOutWords board [] = board
 crossOutWords board (w:wx) = crossOutWords (crossOutWord board w) wx
 
--- Cross out words in all directions and return board in basic version
-crossOutWordsInAllDirections :: Board -> [String] -> Board
-crossOutWordsInAllDirections [] _ = []
-crossOutWordsInAllDirections board wordList = transposeBoard (crossOutWords (transposeBoard (crossOutWords board wordList)) wordList) --TODO add diagonall direction
-
 crossOutWordsHorizontally :: Board -> [String] -> Board
 crossOutWordsHorizontally [] _ = []
 crossOutWordsHorizontally board wordList = crossOutWords board wordList
@@ -69,6 +59,14 @@ crossOutWordsHorizontally board wordList = crossOutWords board wordList
 crossOutWordsVertically :: Board -> [String] -> Board
 crossOutWordsVertically [] _ = []
 crossOutWordsVertically board wordList = transposeBoard (crossOutWords (transposeBoard board) wordList)
+
+crossOutWordsDiagonally :: Board -> [String] -> Board
+crossOutWordsDiagonally [] _ = []
+crossOutWordsDiagonally board wordList = []
+
+crossOutWordsDiagonally2 :: Board -> [String] -> Board
+crossOutWordsDiagonally2 [] _ = []
+crossOutWordsDiagonally2 board wordList = []
 
 -- gets word from crossed out line
 getWordFromCrossedOutLine :: String -> String
@@ -83,7 +81,6 @@ getWordFromCrossedOutBoard [] = ""
 getWordFromCrossedOutBoard (x:xs) = (getWordFromCrossedOutLine x) ++ (getWordFromCrossedOutBoard xs)
 
 
-
 -- changes all characters to lowercase
 getListWithLowerStrings :: [String] -> [String]
 getListWithLowerStrings board = map toLowerString board
@@ -92,6 +89,4 @@ getListWithLowerStrings board = map toLowerString board
 findSecretWord :: [String] -> [String] -> String
 findSecretWord [] _ = []
 findSecretWord _ [] = []
---findSecretWord board wordList = getWordFromCrossedOutBoard (crossOutWordsInAllDirections (getListWithLowerStrings board) wordList)
---findSecretWord board wordList =  boardToString (crossOutWordsHorizontally (getListWithLowerStrings board) wordList)
 findSecretWord board wordList = getWordFromCrossedOutLine (toMaxChars (boardToString (crossOutWordsHorizontally (getListWithLowerStrings board) wordList)) (boardToString (crossOutWordsVertically (getListWithLowerStrings board) wordList)))

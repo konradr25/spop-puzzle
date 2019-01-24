@@ -22,26 +22,17 @@ toMaxChars (w:wx) (w1:wx1) = (toMaxChar w w1) : (toMaxChars wx wx1)
 joinAllOrienStrings :: String -> String -> String -> String -> String
 joinAllOrienStrings vert hor diagLeft diagRight = (toMaxChars diagRight (toMaxChars diagLeft (toMaxChars vert hor)))
 
+-- gets all words that are not in uppercase
+boardTOStringWithReplace :: Board -> String -> String 
+-- boardTOStringWithReplace [] _ = ""
+boardTOStringWithReplace (x:xs) str = (replaceWord (toLowerString str) (toUpperString str) x) ++ (boardTOStringWithReplace xs str)
+
 
 toLowerString :: String -> String
 toLowerString str = [ toLower x | x <- str]
 
 toUpperString :: String -> String
 toUpperString str = [ toUpper x | x <- str]
-
---checks if word on board exists
-findWordOnBoardInRows :: Board -> String -> Bool
-findWordOnBoardInRows [] _ = False
-findWordOnBoardInRows (x:xs) word = (||) (findWordInRow word x) (findWordOnBoardInRows xs word)
-
---cheks if word in line exists
-findWordInRow :: String -> String -> Bool
-findWordInRow word line = isInfixOf word line
-
--- probably not used
---replaceWordInRowIfExists :: String -> [String] -> [String]
---replaceWordInRowIfExists _ [] = []
--- TODO create method
 
 -- replaces word eg replace "O" "X" "HELLO WORLD" -> "HELLX WXRLD"
 replaceWord :: String -> String -> String -> String
@@ -66,7 +57,6 @@ crossOutWords board (w:wx) = crossOutWords (crossOutWord board w) wx
 crossOutWordsInAllDirections :: Board -> [String] -> Board
 crossOutWordsInAllDirections [] _ = []
 crossOutWordsInAllDirections board wordList = transposeBoard (crossOutWords (transposeBoard (crossOutWords board wordList)) wordList) --TODO add diagonall direction
-
 
 
 -- gets word from crossed out line

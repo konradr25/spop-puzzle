@@ -3,6 +3,10 @@ module Algorithm
       	, printBoard
       	, boardToString
       	, skew
+      	, unskew
+      	, diagonalize2
+      	, diagonalize
+      	, undiagonalize
       ) where
 
 import Data.List (isInfixOf, transpose)
@@ -29,6 +33,7 @@ skew (l:ls) = l : skew (map indent ls)
 unskew :: Board -> Board
 unskew [] = []
 unskew (l:ls) = (replace "_" "" l) : (unskew ls)
+
 joinAllOrienStrings :: String -> String -> String -> String -> String
 joinAllOrienStrings vert hor diagLeft diagRight = (toMaxChars diagRight (toMaxChars diagLeft (toMaxChars vert hor)))
 
@@ -42,6 +47,15 @@ toLowerString str = [ toLower x | x <- str]
 
 toUpperString :: String -> String
 toUpperString str = [ toUpper x | x <- str]
+
+diagonalize2 :: Board -> Board
+diagonalize2 board = map reverse (transpose (skew board))
+
+diagonalize :: Board -> Board
+diagonalize board = transpose (skew (map reverse board))
+
+undiagonalize :: Board -> Board
+undiagonalize board = map reverse (unskew (transpose board))
 
 -- replaces word eg replace "O" "X" "HELLO WORLD" -> "HELLX WXRLD"
 replaceWord :: String -> String -> String -> String
@@ -99,4 +113,7 @@ getListWithLowerStrings board = map toLowerString board
 findSecretWord :: [String] -> [String] -> String
 findSecretWord [] _ = []
 findSecretWord _ [] = []
-findSecretWord board wordList = getWordFromCrossedOutLine (toMaxChars (boardToString (crossOutWordsHorizontally (getListWithLowerStrings board) wordList)) (boardToString (crossOutWordsVertically (getListWithLowerStrings board) wordList)))
+findSecretWord board wordList =
+  let horString = boardToString (crossOutWordsHorizontally (getListWithLowerStrings board) wordList)
+      verString = boardToString (crossOutWordsVertically (getListWithLowerStrings board) wordList)
+  in getWordFromCrossedOutLine (toMaxChars horString verString)

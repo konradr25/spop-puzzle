@@ -3,33 +3,32 @@ module Main where
 import Lib
 import Algorithm
 import System.IO
+import Data.List (isInfixOf, transpose)
 
 main :: IO ()
 main = do
-    -- Get the file name of board
-    putStr "What is the board definition filename? "
-    hFlush stdout
-    fileNameOfBoard <- getLine
 
     -- Getting file content
-    boardFileContent <- readFile fileNameOfBoard
+    boardFileContent <- readFile "diag_board.txt"
     let boardLines = lines boardFileContent
 
-    -- Get the file name of words
-    putStr "What is the filename of words? "
-    hFlush stdout
-    fileNameOfWords <- getLine
-
     -- Getting file content
-    wordsFileContent <- readFile fileNameOfWords
+    wordsFileContent <- readFile "diag_words.txt"
     let wordsLines = lines wordsFileContent
 
     -- finding secret word
-    putStrLn "Finding secret word"
+    printBoard boardLines
+    printBoard (skew boardLines)
+    printBoard (diagonalize boardLines)
+    printBoard (undiagonalize (diagonalize boardLines))
+    --printBoard (skew (undiagonalize (diagonalize boardLines)))
+    --printBoard  (transpose (skew (undiagonalize (diagonalize boardLines))))
+    --printBoard (transpose (skew boardLines))
+    --printBoard (skew (transpose boardLines))
+    --putStrLn (boardToString (unskew (skew boardLines)))
 
     let secretWord = findSecretWord boardLines wordsLines
     putStr "The secret word is "
     putStrLn secretWord
 
     putStrLn "Done"
-    

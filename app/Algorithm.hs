@@ -1,6 +1,8 @@
 module Algorithm
       ( findSecretWord
       	, printBoard
+      	, boardToString
+      	, skew
       ) where
 
 import Data.List (isInfixOf, transpose)
@@ -18,6 +20,16 @@ toMaxChar a b = min a b
 toMaxChars :: String -> String -> String
 toMaxChars [] _ = []
 toMaxChars (w:wx) (w1:wx1) = (toMaxChar w w1) : (toMaxChars wx wx1)
+
+skew :: Board -> Board
+skew [] = []
+skew (l:ls) = l : skew (map indent ls)
+  where indent line = '_' : line
+
+unskew :: Board -> Board
+unskew [] = []
+unskew (l:ls) = l : unskew (map unindent ls)
+  where unindent line = '_' : line
 
 joinAllOrienStrings :: String -> String -> String -> String -> String
 joinAllOrienStrings vert hor diagLeft diagRight = (toMaxChars diagRight (toMaxChars diagLeft (toMaxChars vert hor)))

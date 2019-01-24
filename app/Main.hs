@@ -6,26 +6,17 @@ import System.IO
 
 main :: IO ()
 main = do
-    -- Get the file name of board
-    putStr "What is the board definition filename? "
-    hFlush stdout
-    fileNameOfBoard <- getLine
 
     -- Getting file content
-    boardFileContent <- readFile fileNameOfBoard
+    boardFileContent <- readFile "hor_board.txt"
     let boardLines = lines boardFileContent
 
-    -- Get the file name of words
-    putStr "What is the filename of words? "
-    hFlush stdout
-    fileNameOfWords <- getLine
-
     -- Getting file content
-    wordsFileContent <- readFile fileNameOfWords
+    wordsFileContent <- readFile "hor_words.txt"
     let wordsLines = lines wordsFileContent
 
     -- finding secret word
-    putStrLn "Finding secret word"
+    putStrLn (boardToString (skew boardLines))
 
     let secretWord = findSecretWord boardLines wordsLines
     putStr "The secret word is "

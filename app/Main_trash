@@ -16,7 +16,7 @@ main = do
     let wordsLines = lines wordsFileContent
 
     -- finding secret word
-    putStrLn "Finding secret word"
+    putStrLn (boardToString (skew boardLines))
 
     let secretWord = findSecretWord boardLines wordsLines
     putStr "The secret word is "

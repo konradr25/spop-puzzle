@@ -13,7 +13,7 @@ printBoard :: Board -> IO ()
 printBoard board = putStrLn (unlines board)
 
 toMaxChar :: Char -> Char -> Char
-toMaxChar a b = max a b
+toMaxChar a b = min a b
 
 toMaxChars :: String -> String -> String
 toMaxChars [] _ = []
@@ -28,9 +28,9 @@ boardTOStringWithReplace [] _ = ""
 boardTOStringWithReplace (x:xs) str = (replaceWord (toLowerString str) (toUpperString str) x) ++ (boardTOStringWithReplace xs str)
 
 -- gets all words that are not in uppercase
-boardTOString :: Board -> String
-boardTOString [] = ""
-boardTOString (x:xs) = x ++ (boardTOString xs)
+boardToString :: Board -> String
+boardToString [] = ""
+boardToString (x:xs) = x ++ (boardToString xs)
 
 toLowerString :: String -> String
 toLowerString str = [ toLower x | x <- str]
@@ -62,6 +62,13 @@ crossOutWordsInAllDirections :: Board -> [String] -> Board
 crossOutWordsInAllDirections [] _ = []
 crossOutWordsInAllDirections board wordList = transposeBoard (crossOutWords (transposeBoard (crossOutWords board wordList)) wordList) --TODO add diagonall direction
 
+crossOutWordsHorizontally :: Board -> [String] -> Board
+crossOutWordsHorizontally [] _ = []
+crossOutWordsHorizontally board wordList = crossOutWords board wordList
+
+crossOutWordsVertically :: Board -> [String] -> Board
+crossOutWordsVertically [] _ = []
+crossOutWordsVertically board wordList = transposeBoard (crossOutWords (transposeBoard board) wordList)
 
 -- gets word from crossed out line
 getWordFromCrossedOutLine :: String -> String
@@ -85,4 +92,6 @@ getListWithLowerStrings board = map toLowerString board
 findSecretWord :: [String] -> [String] -> String
 findSecretWord [] _ = []
 findSecretWord _ [] = []
-findSecretWord board wordList = getWordFromCrossedOutBoard (crossOutWordsInAllDirections (getListWithLowerStrings board) wordList)
+--findSecretWord board wordList = getWordFromCrossedOutBoard (crossOutWordsInAllDirections (getListWithLowerStrings board) wordList)
+--findSecretWord board wordList =  boardToString (crossOutWordsHorizontally (getListWithLowerStrings board) wordList)
+findSecretWord board wordList = getWordFromCrossedOutLine (toMaxChars (boardToString (crossOutWordsHorizontally (getListWithLowerStrings board) wordList)) (boardToString (crossOutWordsVertically (getListWithLowerStrings board) wordList)))

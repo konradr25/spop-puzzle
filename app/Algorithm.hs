@@ -24,9 +24,13 @@ joinAllOrienStrings vert hor diagLeft diagRight = (toMaxChars diagRight (toMaxCh
 
 -- gets all words that are not in uppercase
 boardTOStringWithReplace :: Board -> String -> String 
--- boardTOStringWithReplace [] _ = ""
+boardTOStringWithReplace [] _ = ""
 boardTOStringWithReplace (x:xs) str = (replaceWord (toLowerString str) (toUpperString str) x) ++ (boardTOStringWithReplace xs str)
 
+-- gets all words that are not in uppercase
+boardTOString :: Board -> String
+boardTOString [] = ""
+boardTOString (x:xs) = x ++ (boardTOString xs)
 
 toLowerString :: String -> String
 toLowerString str = [ toLower x | x <- str]

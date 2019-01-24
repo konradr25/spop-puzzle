@@ -4,9 +4,11 @@ module Algorithm
       	, boardToString
       	, skew
       	, unskew
-      	, diagonalize2
-      	, diagonalize
-      	, undiagonalize
+      	, skewBackward
+      	, diagonalizeUp
+      	, diagonalizeDown
+      	, undiagonalizeDown
+      	, undiagonalizeUp
       ) where
 
 import Data.List (isInfixOf, transpose)
@@ -30,12 +32,21 @@ skew [] = []
 skew (l:ls) = l : skew (map indent ls)
   where indent line = '_' : line
 
+--skewB :: Board -> Board
+--skewB [] = []
+--skewB (l:ls) = l : skew (map indentB ls)
+ -- where indentB line = line : '_'
+
+skewBackward :: Board -> Board
+skewBackward [] = []
+skewBackward board = map reverse (reverse (skew (reverse (map reverse board))))
+
 unskew :: Board -> Board
 unskew [] = []
 unskew (l:ls) = (replace "_" "" l) : (unskew ls)
 
 joinAllOrienStrings :: String -> String -> String -> String -> String
-joinAllOrienStrings vert hor diagLeft diagRight = (toMaxChars diagRight (toMaxChars diagLeft (toMaxChars vert hor)))
+joinAllOrienStrings vert hor diagDown diagUp = (toMaxChars diagUp (toMaxChars diagDown (toMaxChars vert hor)))
 
 -- gets all words that are not in uppercase
 boardToString :: Board -> String
@@ -48,14 +59,17 @@ toLowerString str = [ toLower x | x <- str]
 toUpperString :: String -> String
 toUpperString str = [ toUpper x | x <- str]
 
-diagonalize2 :: Board -> Board
-diagonalize2 board = map reverse (transpose (skew board))
+diagonalizeDown :: Board -> Board
+diagonalizeDown board = transpose (skewBackward (skew (map reverse board)))
 
-diagonalize :: Board -> Board
-diagonalize board = transpose (skew (map reverse board))
+undiagonalizeDown :: Board -> Board
+undiagonalizeDown board = map reverse (unskew (transpose board))
 
-undiagonalize :: Board -> Board
-undiagonalize board = map reverse (unskew (transpose board))
+diagonalizeUp :: Board -> Board
+diagonalizeUp board = map reverse (transpose (skewBackward (skew board)))
+
+undiagonalizeUp :: Board -> Board
+undiagonalizeUp board = unskew (transpose (map reverse board))
 
 -- replaces word eg replace "O" "X" "HELLO WORLD" -> "HELLX WXRLD"
 replaceWord :: String -> String -> String -> String
@@ -84,13 +98,13 @@ crossOutWordsVertically :: Board -> [String] -> Board
 crossOutWordsVertically [] _ = []
 crossOutWordsVertically board wordList = transposeBoard (crossOutWords (transposeBoard board) wordList)
 
-crossOutWordsDiagonally :: Board -> [String] -> Board
-crossOutWordsDiagonally [] _ = []
-crossOutWordsDiagonally board wordList = []
+crossOutWordsDiagonallyDown :: Board -> [String] -> Board
+crossOutWordsDiagonallyDown [] _ = []
+crossOutWordsDiagonallyDown board wordList = undiagonalizeDown (crossOutWords (diagonalizeDown board) wordList)
 
-crossOutWordsDiagonally2 :: Board -> [String] -> Board
-crossOutWordsDiagonally2 [] _ = []
-crossOutWordsDiagonally2 board wordList = []
+crossOutWordsDiagonallyUp :: Board -> [String] -> Board
+crossOutWordsDiagonallyUp [] _ = []
+crossOutWordsDiagonallyUp board wordList = undiagonalizeUp (crossOutWords (diagonalizeUp board) wordList)
 
 -- gets word from crossed out line
 getWordFromCrossedOutLine :: String -> String
@@ -116,4 +130,6 @@ findSecretWord _ [] = []
 findSecretWord board wordList =
   let horString = boardToString (crossOutWordsHorizontally (getListWithLowerStrings board) wordList)
       verString = boardToString (crossOutWordsVertically (getListWithLowerStrings board) wordList)
-  in getWordFromCrossedOutLine (toMaxChars horString verString)
+      diagDownString = boardToString (crossOutWordsDiagonallyDown (getListWithLowerStrings board) wordList)
+      diagUpString = boardToString (crossOutWordsDiagonallyUp (getListWithLowerStrings board) wordList)
+  in getWordFromCrossedOutLine (joinAllOrienStrings horString verString diagDownString diagUpString)

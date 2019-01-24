@@ -9,18 +9,19 @@ main :: IO ()
 main = do
 
     -- Getting file content
-    boardFileContent <- readFile "diag_board.txt"
+    boardFileContent <- readFile "puzzle1_board.txt"
     let boardLines = lines boardFileContent
 
     -- Getting file content
-    wordsFileContent <- readFile "diag_words.txt"
+    wordsFileContent <- readFile "puzzle1_words.txt"
     let wordsLines = lines wordsFileContent
 
     -- finding secret word
     printBoard boardLines
     printBoard (skew boardLines)
-    printBoard (diagonalize boardLines)
-    printBoard (undiagonalize (diagonalize boardLines))
+    printBoard (skewBackward (skew boardLines))
+ --   printBoard (diagonalize2 boardLines)
+  --  printBoard (undiagonalize2 (diagonalize2 boardLines))
     --printBoard (skew (undiagonalize (diagonalize boardLines)))
     --printBoard  (transpose (skew (undiagonalize (diagonalize boardLines))))
     --printBoard (transpose (skew boardLines))

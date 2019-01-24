@@ -1,14 +1,7 @@
 module Algorithm
       ( findSecretWord
-      	, printBoard
-      	, boardToString
-      	, skew
-      	, unskew
-      	, skewBackward
-      	, diagonalizeUp
-      	, diagonalizeDown
-      	, undiagonalizeDown
-      	, undiagonalizeUp
+        , printBoard
+        , prepareWordsToFind
       ) where
 
 import Data.List (isInfixOf, transpose)
@@ -16,6 +9,10 @@ import Data.Char (toLower, toUpper, isUpper, isLower)
 import Data.List.Utils (replace)
 
 type Board = [String]
+
+prepareWordsToFind :: Board -> Board
+prepareWordsToFind [] = []
+prepareWordsToFind (l:ls) = (replace " " "" (replace "-" "" l)) : (prepareWordsToFind ls)
 
 printBoard :: Board -> IO ()
 printBoard board = putStrLn (unlines board)
@@ -27,19 +24,17 @@ toMaxChars :: String -> String -> String
 toMaxChars [] _ = []
 toMaxChars (w:wx) (w1:wx1) = (toMaxChar w w1) : (toMaxChars wx wx1)
 
-skew :: Board -> Board
-skew [] = []
-skew (l:ls) = l : skew (map indent ls)
-  where indent line = '_' : line
+prefix:: String -> String
+prefix [] = []
+prefix line = '_' : line
 
---skewB :: Board -> Board
---skewB [] = []
---skewB (l:ls) = l : skew (map indentB ls)
- -- where indentB line = line : '_'
+toSkew :: Board -> Board
+toSkew [] = []
+toSkew (l:ls) = l : toSkew (map prefix ls)
 
 skewBackward :: Board -> Board
 skewBackward [] = []
-skewBackward board = map reverse (reverse (skew (reverse (map reverse board))))
+skewBackward board = map reverse (reverse (toSkew (reverse (map reverse board))))
 
 unskew :: Board -> Board
 unskew [] = []
@@ -60,13 +55,13 @@ toUpperString :: String -> String
 toUpperString str = [ toUpper x | x <- str]
 
 diagonalizeDown :: Board -> Board
-diagonalizeDown board = transpose (skewBackward (skew (map reverse board)))
+diagonalizeDown board = transpose (skewBackward (toSkew (map reverse board)))
 
 undiagonalizeDown :: Board -> Board
 undiagonalizeDown board = map reverse (unskew (transpose board))
 
 diagonalizeUp :: Board -> Board
-diagonalizeUp board = map reverse (transpose (skewBackward (skew board)))
+diagonalizeUp board = map reverse (transpose (skewBackward (toSkew board)))
 
 undiagonalizeUp :: Board -> Board
 undiagonalizeUp board = unskew (transpose (map reverse board))
